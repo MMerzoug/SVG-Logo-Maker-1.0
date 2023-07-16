@@ -1,5 +1,8 @@
 const inquirer = await import("inquirer");
-const fs = require("jest");
+const fs = require("fs");
+
+// Import the mocked versions of the shapes
+import {mockTriangle, mockCircle, mockSquare} from "./mockShapes";
 
 // Define the shapes
 const Triangle = function() {
@@ -54,14 +57,14 @@ const questions = [
   },
 ];
 
-const answers = inquirer.prompt(questions);
+const answers = await inquirer.prompt(questions);
 
 // Create the shape
 const shape = new answers.shape();
 shape.color = answers.color;
 
 // Render the SVG
-const svg = shape.render();
+const svg = await shape.render();
 
 // Save the SVG to a file
 const filename = `logo.svg`;
@@ -70,3 +73,5 @@ fs.writeFileSync(filename, svg);
 // Print a success message
 console.log(`Generated ${filename}`);
 
+// Start the application
+main();
