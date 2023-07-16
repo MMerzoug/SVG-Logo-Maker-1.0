@@ -1,7 +1,6 @@
 {
   "name": "svg-logo-maker-1.0",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "example": "examples",
@@ -15,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "inquirer": "^9.2.8",
+    "inquirer": "^8.2.4",
     "jest": "^29.6.1"
-  }
+  },
+  "description": ""
 }
